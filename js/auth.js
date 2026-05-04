@@ -13,8 +13,13 @@ async function appLoadConfig() {
 
 function onAuthSuccess() {
   document.getElementById('pw-overlay').style.display = 'none';
-  const content = document.getElementById('admin-content');
-  if (content) content.style.display = 'contents';
+  const adminContent = document.getElementById('admin-content');
+  if (adminContent) {
+    adminContent.style.display = 'contents';
+  } else {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) sidebar.style.removeProperty('display');
+  }
 }
 
 async function authTryLogin() {
