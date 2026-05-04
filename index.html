@@ -15,7 +15,7 @@
       background: rgba(10,10,20,0.97);
       display: flex; align-items: center; justify-content: center;
     }
-    #sidebar, #mobile-nav { display: none; }
+    /* sidebar and mobile-nav hidden via inline style until auth */
   </style>
 </head>
 <body>
@@ -34,7 +34,7 @@
   </div>
 </div>
 
-<div id="sidebar">
+<div id="sidebar" style="display:none">
   <!-- Mobile drag handle -->
   <div id="sidebar-handle" aria-label="Відкрити/закрити список">
     <div class="handle-bar"></div>
@@ -58,7 +58,7 @@
 </div>
 
 <!-- Mobile floating nav (shown after auth, mobile only) -->
-<div id="mobile-nav">
+<div id="mobile-nav" style="display:none">
   <button id="mobile-menu-btn" aria-label="Меню">
     <span class="mob-icon">☰</span>
     <span class="mob-label">Меню</span>
