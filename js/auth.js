@@ -17,8 +17,10 @@ function onAuthSuccess() {
   if (adminContent) {
     adminContent.style.display = 'contents';
   } else {
-    const sidebar = document.getElementById('sidebar');
-    if (sidebar) sidebar.style.removeProperty('display');
+    const sidebar  = document.getElementById('sidebar');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (sidebar)   sidebar.style.removeProperty('display');
+    if (mobileNav) mobileNav.style.removeProperty('display');
   }
 }
 

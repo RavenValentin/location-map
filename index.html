@@ -15,7 +15,7 @@
       background: rgba(10,10,20,0.97);
       display: flex; align-items: center; justify-content: center;
     }
-    #sidebar { display: none; }
+    #sidebar, #mobile-nav { display: none; }
   </style>
 </head>
 <body>
@@ -55,6 +55,18 @@
 
   <!-- Admin link -->
   <a href="admin.html" class="admin-btn">⚙️ Адмін-панель</a>
+</div>
+
+<!-- Mobile floating nav (shown after auth, mobile only) -->
+<div id="mobile-nav">
+  <button id="mobile-menu-btn" aria-label="Меню">
+    <span class="mob-icon">☰</span>
+    <span class="mob-label">Меню</span>
+  </button>
+  <a href="admin.html" id="mobile-admin-btn" aria-label="Адмін">
+    <span class="mob-icon">⚙️</span>
+    <span class="mob-label">Адмін</span>
+  </a>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

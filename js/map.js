@@ -246,6 +246,9 @@ function initMobileSidebar() {
   handle.addEventListener('click', toggle);
   header.addEventListener('click', toggle);
 
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggle);
+
   // Close sheet when clicking a location (flyTo handles it visually)
   document.getElementById('location-list').addEventListener('click', e => {
     if (e.target.closest('.loc-item')) {
