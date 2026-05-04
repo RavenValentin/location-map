@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адмін — Карта міста</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { overflow-y: auto; }
+  </style>
+</head>
+<body class="admin-page">
+
+  <!-- Back link -->
+  <div style="width:100%;max-width:700px">
+    <a href="index.html" style="color:var(--text-muted);text-decoration:none;font-size:13px;display:inline-flex;align-items:center;gap:6px;margin-bottom:4px;">
+      ← Повернутись до карти
+    </a>
+  </div>
+
+  <!-- GitHub settings -->
+  <div class="glass admin-card">
+    <h2>🔑 GitHub налаштування <span class="badge">зберігається локально</span></h2>
+
+    <div class="form-grid">
+      <div>
+        <label for="gh-owner">GitHub Username / Org</label>
+        <input id="gh-owner" type="text" placeholder="your-username" autocomplete="off">
+      </div>
+      <div>
+        <label for="gh-repo">Назва репозиторію</label>
+        <input id="gh-repo" type="text" placeholder="location-map" autocomplete="off">
+      </div>
+      <div class="full">
+        <label for="gh-token">Personal Access Token (PAT)</label>
+        <input id="gh-token" type="password" placeholder="ghp_xxxxxxxxxxxx" autocomplete="off">
+        <div class="coord-hint">
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM8 5.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
+          Потрібен токен з правом <code>repo</code>. Зберігається тільки у вашому браузері.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;display:flex;align-items:center;gap:10px;">
+      <button id="save-settings" class="btn btn-primary">Зберегти</button>
+      <div id="settings-status" class="status-msg"></div>
+    </div>
+  </div>
+
+  <!-- Add location form -->
+  <div class="glass admin-card">
+    <h2>➕ Додати локацію</h2>
+
+    <form id="add-form">
+      <div class="form-grid">
+        <div class="full">
+          <label for="loc-name">Назва *</label>
+          <input id="loc-name" type="text" placeholder="Кав'ярня Арт" required>
+        </div>
+
+        <div>
+          <label for="loc-cat">Категорія</label>
+          <select id="loc-cat">
+            <option value="cafe">☕ Кафе</option>
+            <option value="park">🌿 Парки</option>
+            <option value="place">📍 Місця</option>
+            <option value="food">🍽 Їжа</option>
+            <option value="other">⭐ Інше</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="loc-photo">URL фото (опційно)</label>
+          <input id="loc-photo" type="url" placeholder="https://...">
+        </div>
+
+        <div class="full">
+          <label for="loc-desc">Опис</label>
+          <textarea id="loc-desc" placeholder="Коротко про це місце..."></textarea>
+        </div>
+
+        <div class="full">
+          <label>Координати * — клікніть на карту нижче або введіть вручну</label>
+          <div class="coord-row">
+            <input id="loc-lat" type="number" step="any" placeholder="Широта (lat)">
+            <input id="loc-lng" type="number" step="any" placeholder="Довгота (lng)">
+          </div>
+          <div class="coord-hint">
+            🖱 Клікніть на карту, щоб вибрати точку
+          </div>
+        </div>
+      </div>
+
+      <!-- Map for picking coordinates -->
+      <div id="admin-map" style="margin-top:14px;"></div>
+
+      <div style="margin-top:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+        <button type="submit" id="save-btn" class="btn btn-primary">Зберегти локацію</button>
+        <button type="reset" class="btn btn-ghost">Скинути форму</button>
+        <div id="form-status" class="status-msg"></div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Existing locations list -->
+  <div class="glass admin-card">
+    <h2>
+      📋 Існуючі локації
+      <button id="load-list-btn" class="btn btn-ghost" style="margin-left:auto;padding:6px 12px;font-size:12px;">
+        Оновити список
+      </button>
+    </h2>
+    <div id="list-status" class="status-msg"></div>
+    <div id="admin-loc-list">
+      <div class="no-locations">Натисніть «Оновити список» або збережіть налаштування GitHub</div>
+    </div>
+  </div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
