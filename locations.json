@@ -15,20 +15,6 @@
       "createdAt": "2026-05-04"
     },
     {
-      "id": "1746378000003",
-      "name": "Café Camelot",
-      "description": "Затишна кав'ярня у Старому місті.",
-      "category": "cafe",
-      "tags": [
-        "тепле світло",
-        "вінтаж"
-      ],
-      "lat": 50.0625,
-      "lng": 19.9368,
-      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI53oV_R0GpqPv1cy2JZB7U6dnM3ihF8E8xQ&s",
-      "createdAt": "2026-05-04"
-    },
-    {
       "id": "1777922064347",
       "name": "Червона стіна",
       "description": "Біля церкви",
