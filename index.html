@@ -13,9 +13,26 @@
 
 <div id="map"></div>
 
+<!-- Password gate -->
+<div id="pw-overlay">
+  <div class="pw-box glass" id="pw-form">
+    <div class="pw-icon">🗺</div>
+    <h3>Карта міста</h3>
+    <p>Введіть пароль для доступу</p>
+    <input id="pw-input" type="password" placeholder="Пароль" autocomplete="current-password">
+    <div id="pw-error" class="pw-error"></div>
+    <button id="pw-submit" class="btn btn-primary">Увійти →</button>
+  </div>
+</div>
+
 <div id="sidebar">
+  <!-- Mobile drag handle -->
+  <div id="sidebar-handle" aria-label="Відкрити/закрити список">
+    <div class="handle-bar"></div>
+  </div>
+
   <!-- Header -->
-  <div class="glass sidebar-header">
+  <div class="sidebar-header">
     <div class="sidebar-title">
       <span>📍</span> Карта міста
     </div>
@@ -23,15 +40,16 @@
   </div>
 
   <!-- Location list -->
-  <div class="glass location-list" id="location-list">
+  <div class="location-list" id="location-list">
     <div class="no-locations">Завантаження...</div>
   </div>
 
   <!-- Admin link -->
-  <a href="admin.html" class="glass admin-btn">⚙️ Адмін-панель</a>
+  <a href="admin.html" class="admin-btn">⚙️ Адмін-панель</a>
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/auth.js"></script>
 <script src="js/map.js"></script>
 </body>
 </html>
