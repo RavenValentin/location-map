@@ -10,6 +10,20 @@
       "lng": 19.940233,
       "photo": "https://raw.githubusercontent.com/RavenValentin/location-map/main/photos/1777922061853.jpeg",
       "createdAt": "2026-05-04"
+    },
+    {
+      "id": "1778707733484",
+      "name": "Топові зелені двері",
+      "description": "",
+      "category": "door",
+      "tags": [
+        "Зелений",
+        "БагатоСвітла"
+      ],
+      "lat": 50.063292,
+      "lng": 19.942777,
+      "photo": "https://raw.githubusercontent.com/Ravenvalentin/location-map/main/photos/1778707731662.jpeg",
+      "createdAt": "2026-05-13"
     }
   ]
 }
