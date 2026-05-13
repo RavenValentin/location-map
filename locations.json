@@ -24,6 +24,17 @@
       "lng": 19.942777,
       "photo": "https://raw.githubusercontent.com/Ravenvalentin/location-map/main/photos/1778707731662.jpeg",
       "createdAt": "2026-05-13"
+    },
+    {
+      "id": "1778708029836",
+      "name": "Camelot",
+      "description": "",
+      "category": "cafe",
+      "tags": [],
+      "lat": 50.06303,
+      "lng": 19.939123,
+      "photo": "https://raw.githubusercontent.com/Ravenvalentin/location-map/main/photos/1778708027748.jpeg",
+      "createdAt": "2026-05-13"
     }
   ]
 }
